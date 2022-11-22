@@ -1,1 +1,6 @@
-<p>unadopted-kitten-list works!</p>
+<div>
+    <app-unadoped-kitten-item
+    *ngFor="let kitten of unadoptedKittens"
+    [kitten]="kitten"
+    ></app-unadoped-kitten-item>
+</div>

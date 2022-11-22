@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { KittenService } from 'src/app/kitten.service';
+import { Kitten } from 'src/app/models/kittens';
 
 @Component({
   selector: 'app-unadopted-kitten-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnadoptedKittenListComponent implements OnInit {
 
-  constructor() { }
+  unadoptedKittens: Kitten[] = [];
+
+  constructor(private kittenService: KittenService) { }
 
   ngOnInit(): void {
+    this.kittenService.findAllUnadoptedCats().subscribe(kittens => this.unadoptedKittens = kittens);
   }
 
 }
