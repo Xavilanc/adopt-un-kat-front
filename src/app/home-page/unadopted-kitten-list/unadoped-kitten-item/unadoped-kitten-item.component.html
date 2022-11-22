@@ -1,4 +1,18 @@
-<div>
-    <p>{{kitten.name}}</p>
-    <p>{{kitten.age}}</p>
+<div class="unadoped-kitten-item">
+    <img class="kitten-first-image" src={{kitten.imageUrls[1]}} alt={{kitten.name}} />
+    <div class="kitten-name-age-box">
+        <p>Nom: <span>{{kitten.name}}</span></p>
+        <p>Age: <span>{{kitten.age}}</span></p>
+    </div>
+    <div class="kitten-race-color-box">
+        <p>Race: <span>{{kitten.race}}</span></p>
+        <p>Couleur: <span>{{kitten.color}}</span></p>
+    </div>
+    <p class="kitten-genre">Genre : <span>{{kitten.genre}}</span></p>
+    <div class="button-box">
+        <button type="button" class="btn-adopt">Adopter</button>
+        <button type="button" class="btn-modify">Modifier</button>
+        <button type="button" class="btn-delete">Supprimer</button>
+    </div>
+    
 </div>

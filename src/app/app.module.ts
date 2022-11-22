@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UnadoptedKittenListComponent } from './home-page/unadopted-kitten-list/unadopted-kitten-list.component';
 import { UnadopedKittenItemComponent } from './home-page/unadopted-kitten-list/unadoped-kitten-item/unadoped-kitten-item.component';
+import { KittenDetailsPageComponent } from './kitten-details-page/kitten-details-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     UnadoptedKittenListComponent,
-    UnadopedKittenItemComponent
+    UnadopedKittenItemComponent,
+    KittenDetailsPageComponent
   ],
   imports: [
     BrowserModule,

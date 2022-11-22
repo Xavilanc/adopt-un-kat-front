@@ -5,6 +5,6 @@ export interface Kitten {
     color: string;
     race: string;
     genre: string;
-    imageUrl: string;
+    imageUrls: string[];
     isAdopted: boolean;
   }

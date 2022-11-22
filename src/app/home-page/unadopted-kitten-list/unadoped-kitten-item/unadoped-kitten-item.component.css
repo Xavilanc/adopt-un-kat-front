@@ -1,0 +1,78 @@
+/* kitten item */
+.unadoped-kitten-item {
+    padding: 2%;
+    width: 25vw;
+    margin: 1%;
+    background-color: rgb(220, 83, 83);
+    border-radius: 15px;
+}
+
+/* Première image du chat pour la carte */
+.kitten-first-image {
+    border-radius: 15px;
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+
+/* box centenant nom + age ou race + couleur */
+.kitten-name-age-box,
+.kitten-race-color-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Label pour le nom, age, race, couleur */
+.kitten-name-age-box p,
+.kitten-race-color-box p {
+    padding-left: 2%;
+    padding-right: 2%;
+    font-weight: bold;
+    font-size: 1.5vw;
+    color: rgb(0, 0, 0);
+}
+
+/* valeurs nom, age, couleur, race, genre */
+.kitten-name-age-box p span,
+.kitten-race-color-box p span,
+.kitten-genre span {
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+}
+
+/* label genre */
+.kitten-genre {
+    font-weight: bold;
+    font-size: 1.5vw;
+    color: rgb(0, 0, 0);
+    padding-left: 0.8%;
+}
+
+/* box contenant les bouttons */
+.button-box {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-box button {
+    width: 25%;
+    border: none;
+    height: 3vh;
+    border-radius: 15px;
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.btn-adopt {
+    background-color: rgb(21, 195, 47);
+}
+
+.btn-modify {
+    background-color: rgb(68, 68, 230);
+}
+
+.btn-delete {
+    background-color: rgb(184, 35, 35);
+}
+
