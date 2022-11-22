@@ -11,6 +11,12 @@ export class UnadoptedKittenListComponent implements OnInit {
 
   unadoptedKittens: Kitten[] = [];
 
+  kittenId!: number;
+
+  addKittenId(kittenId: number) {
+    this.kittenId = kittenId;
+  }
+
   constructor(private kittenService: KittenService) { }
 
   ngOnInit(): void {

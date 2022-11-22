@@ -1,5 +1,5 @@
 export interface Kitten {
-    id: number | null;
+    id: number;
     name: string;
     age: number;
     color: string;
