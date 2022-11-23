@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { KittenService } from 'src/app/kitten.service';
 import { Kitten } from 'src/app/models/kittens';
 
 @Component({
@@ -14,7 +15,12 @@ export class UnadopedKittenItemComponent implements OnInit {
   @Input()
   kitten!: Kitten;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router, 
+    private kittenService: KittenService
+    ) { 
+      
+    }
 
   ngOnInit(): void {
   }
@@ -25,6 +31,22 @@ export class UnadopedKittenItemComponent implements OnInit {
   
   editKitten() {
     this.router.navigate(['update', this.kitten.id]);
+  }
+
+  deleteKitten(id: number) {
+    this.kittenService.deleteCat(this.kitten.id).subscribe(data => this.kitten = data);
+    this.router.navigate([''])
+  .then(() => {
+    window.location.reload();
+  });
+  }
+
+  adoptKitten(id: number) {
+    this.kittenService.adoptCat(this.kitten.id).subscribe(data => this.kitten = data);
+    this.router.navigate([''])
+  .then(() => {
+    window.location.reload();
+  });
   }
 
 }

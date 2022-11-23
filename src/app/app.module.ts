@@ -10,6 +10,7 @@ import { UnadopedKittenItemComponent } from './home-page/unadopted-kitten-list/u
 import { KittenDetailsPageComponent } from './kitten-details-page/kitten-details-page.component';
 import { KittenFormEditPageComponent } from './kitten-form-edit-page/kitten-form-edit-page.component';
 import { FormsModule } from '@angular/forms';
+import { KittenFormCreateComponent } from './kitten-form-create/kitten-form-create.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     UnadoptedKittenListComponent,
     UnadopedKittenItemComponent,
     KittenDetailsPageComponent,
-    KittenFormEditPageComponent
+    KittenFormEditPageComponent,
+    KittenFormCreateComponent
   ],
   imports: [
     BrowserModule,
