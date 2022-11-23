@@ -30,11 +30,11 @@ export class KittenFormEditPageComponent implements OnInit {
     this.kitten.imageUrls.push(this.imageUrlToAdd);
   }
 
-  delete(index: number) {
+  delete(index: number): void {
     this.kitten.imageUrls.splice(index, 1);
   }
 
-  updateCat(): void {
+  updateCat() {
     this.route.paramMap.subscribe(params => {
       const id = parseInt(params.get('id') || '0');
       this.kittenService.updateCat(id, this.kitten).subscribe( data => this.kitten = data);

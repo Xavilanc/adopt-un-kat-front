@@ -1,5 +1,4 @@
-<p>kitten-form-edit-page works!</p>
-<p>{{kitten.name}}</p>
+<h1>Ajouter un chat</h1>
 <form (ngSubmit)="myForm.valid && updateCat()" #myForm="ngForm">
     <fieldset>
         <label for="name">Nom</label>
@@ -48,21 +47,28 @@
 
     <fieldset>
         <label for="image">Image</label>
-    <input type="text" id="image" name="image" placeholder="Ajoutez une url d'image" [(ngModel)]="imageUrlToAdd" #imageForm="ngModel" />
-        <button (click)="add()">Ajouter</button>
-        <div *ngIf="kitten.imageUrls.length > 0">
-            <ul *ngFor="let image of kitten.imageUrls; index as i">
-                <li>
-                    {{image}}
-                    <button (click)="delete(i)">X</button>
-                </li>
-            </ul>
-        </div>   
+        <div class="image-box">
+            <div class="image-list" *ngIf="kitten.imageUrls.length > 0">
+                <ul *ngFor="let image of kitten.imageUrls; index as i">
+                    <li>
+                        {{image}}
+                        <button type="button" (click)="delete(i)">X</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="image-input-btn-box">
+                <input class="image-input" type="text" id="image" name="image" placeholder="Ajoutez une url d'image" [(ngModel)]="imageUrlToAdd" #imageForm="ngModel" />
+                <button type="button" (click)="add()" class="image-btn">Ajouter</button>   
+            </div>    
+        </div>  
     </fieldset>
 
     <div *ngIf="imageForm.errors">
         <span *ngIf="imageForm.invalid && imageForm.touched">La race est requise</span>
     </div>
-
-    <button type="submit">Valider</button>
+    <div class="btn-pattes-box">
+        <button type="submit">Valider</button>
+        <img class="pattes" src="\assets\images\patteschat.png" alt="pattes" />
+    </div>
+    
 </form>
