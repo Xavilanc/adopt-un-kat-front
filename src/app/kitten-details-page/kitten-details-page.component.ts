@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { KittenService } from '../../../kitten.service';
-import { Kitten } from '../../../models/kittens';
+import { KittenService } from '../kitten.service';
+import { Kitten } from '../models/kittens';
 
 @Component({
   selector: 'app-kitten-details-page',

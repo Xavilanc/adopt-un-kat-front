@@ -21,6 +21,10 @@ export class UnadopedKittenItemComponent implements OnInit {
 
   showDetails() {
     this.router.navigate(['details', this.kitten.id]);
-  } 
+  }
+  
+  editKitten() {
+    this.router.navigate(['update', this.kitten.id]);
+  }
 
 }

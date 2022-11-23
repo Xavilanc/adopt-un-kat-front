@@ -19,4 +19,8 @@ export class KittenService {
   findCatsById(id: number): Observable<Kitten> {
     return this.http.get<Kitten>(this.API_URL + '/' + id);
   }
+
+  updateCat(id: number, kitten: Kitten): Observable<Kitten> {
+    return this.http.put<Kitten>(this.API_URL + '/' + id, kitten);
+  }
 }
