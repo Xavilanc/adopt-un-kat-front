@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { KittenService } from '../../../kitten.service';
 import { Kitten } from '../../../models/kittens';
 
@@ -11,14 +12,14 @@ export class KittenDetailsPageComponent implements OnInit {
 
   kitten!: Kitten;
 
-  @Input()
-  id!: number;
-  
-
-  constructor(private kittenService: KittenService) { }
+  constructor(private kittenService: KittenService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.kittenService.findCatsById(this.id).subscribe(kitten => this.kitten = kitten);
+    this.route.paramMap.subscribe(params => {
+      const id = parseInt(params.get('id') || '0');
+      this.kittenService.findCatsById(id).subscribe( data => this.kitten = data);
+    });
+     
   }
 
 }

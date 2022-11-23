@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { Kitten } from 'src/app/models/kittens';
 
 @Component({
@@ -20,9 +21,13 @@ export class UnadopedKittenItemComponent implements OnInit {
     this.sendIdToParent.emit(this.kittenId = this.kitten.id);
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  showDetails() {
+    this.router.navigate(['details', this.kitten.id]);
+  } 
 
 }

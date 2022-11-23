@@ -8,15 +8,15 @@ import { HttpClient} from '@angular/common/http'
 })
 export class KittenService {
 
-  private static readonly API_URL = 'http://localhost:8080/kittens';
+  private API_URL = 'http://localhost:8080/kittens';
 
   constructor(private http: HttpClient) { }
 
   findAllUnadoptedCats(): Observable<Kitten[]> {
-    return this.http.get<Kitten[]>(KittenService.API_URL + '?isAdopted=false');
+    return this.http.get<Kitten[]>(this.API_URL + '?isAdopted=false');
   }
 
   findCatsById(id: number): Observable<Kitten> {
-    return this.http.get<Kitten>(KittenService.API_URL + '/' + id);
+    return this.http.get<Kitten>(this.API_URL + '/' + id);
   }
 }
