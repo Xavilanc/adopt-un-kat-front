@@ -3,6 +3,7 @@ import { Kitten } from './models/kittens';
 import { Observable } from 'rxjs';
 import { HttpClient} from '@angular/common/http'
 import { DomElementSchemaRegistry } from '@angular/compiler';
+import { Kittens } from './kitten-form-create/kitten-form-create.component';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class KittenService {
     return this.http.put<Kitten>(this.API_URL + '/' + id, kitten);
   }
 
-  createCat(kitten: Kitten): Observable<Kitten> {
+  createCat(kitten: Kittens): Observable<Kitten> {
     return this.http.post<Kitten>(this.API_URL, kitten);
   }
 

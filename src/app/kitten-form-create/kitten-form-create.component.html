@@ -1,5 +1,5 @@
 <h1>Ajouter un chat</h1>
-<form (ngSubmit)="myForm.valid && createCat()" #myForm="ngForm">
+<form *ngIf="kitten" (ngSubmit)="myForm.valid && createCat()" #myForm="ngForm">
     <fieldset>
         <label for="name">Nom</label>
         <input type="text" id="name" name="name" placeholder="Nom du chat" [(ngModel)]="kitten.name" #nameForm="ngModel" required />    
@@ -63,9 +63,6 @@
         </div>  
     </fieldset>
 
-    <div *ngIf="imageForm.errors">
-        <span *ngIf="imageForm.invalid && imageForm.touched">Une image est requise</span>
-    </div>
     <div class="btn-pattes-box">
         <button type="submit">Valider</button>
         <img class="pattes" src="\assets\images\patteschat.png" alt="pattes" />

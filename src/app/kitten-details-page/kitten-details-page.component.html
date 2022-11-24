@@ -1,3 +1,7 @@
-<p>{{ kitten.id | json}}</p>
-<p>Toto</p>
-<p>{{kitten.name}}</p>
+<h2>{{kitten.name}}</h2>
+<div class="kitten-image-box" *ngIf="kitten.imageUrls.length > 0">
+    <div *ngFor="let image of kitten.imageUrls; index as i">
+        <img src={{image}} alt={{kitten.name}} />
+    </div>   
+</div>
+
