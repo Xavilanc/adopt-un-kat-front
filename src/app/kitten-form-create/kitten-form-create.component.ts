@@ -41,19 +41,7 @@ constructor(
   }
 
   createCat() {
-    this.kittenService.createCat(this.kitten).subscribe(kitten => this.router.navigate(['']));
+    this.kittenService.createCat(this.kitten).subscribe(() => this.router.navigate(['']));
   }
 
-}
-
-export class Kittens {
-  constructor(
-    public name: string,
-    public age: number,
-    public color: string,
-    public race: string,
-    public genre: string,
-    public imageUrls: string[],
-    public isAdopted: boolean
-    ) {}
 }

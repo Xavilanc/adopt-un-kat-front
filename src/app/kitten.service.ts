@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Kitten } from './models/kittens';
 import { Observable } from 'rxjs';
 import { HttpClient} from '@angular/common/http'
-import { DomElementSchemaRegistry } from '@angular/compiler';
-import { Kittens } from './kitten-form-create/kitten-form-create.component';
 
 @Injectable({
   providedIn: 'root'
