@@ -1,74 +1,77 @@
-<h1>Ajouter un chat</h1>
-<form (ngSubmit)="myForm.valid && updateCat()" #myForm="ngForm">
-    <fieldset>
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name" value={{kitten.name}} [(ngModel)]="kitten.name" #nameForm="ngModel" required />    
-    </fieldset>
+<div class="kitten-edit">
+    <app-header></app-header>
+    <h2>Modifier un chat</h2>
+    <form (ngSubmit)="myForm.valid && updateCat()" #myForm="ngForm">
+        <fieldset>
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" value={{kitten.name}} [(ngModel)]="kitten.name" #nameForm="ngModel" required />    
+        </fieldset>
 
-    <div *ngIf="nameForm.errors">
-        <span *ngIf="nameForm.invalid && nameForm.touched">Le nom est requis</span>
-    </div>
+        <div *ngIf="nameForm.errors">
+            <span *ngIf="nameForm.invalid && nameForm.touched">Le nom est requis</span>
+        </div>
 
-    <fieldset>
-        <label for="age">Age</label>
-        <input type="number" id="age" name="age" value={{kitten.age}} [(ngModel)]="kitten.age" #ageForm="ngModel" required />    
-    </fieldset>
+        <fieldset>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" value={{kitten.age}} [(ngModel)]="kitten.age" #ageForm="ngModel" required />    
+        </fieldset>
 
-    <div *ngIf="ageForm.errors">
-        <span *ngIf="ageForm.invalid && ageForm.touched">L'âge est requis</span>
-    </div>
+        <div *ngIf="ageForm.errors">
+            <span *ngIf="ageForm.invalid && ageForm.touched">L'âge est requis</span>
+        </div>
 
-    <fieldset>
-        <label for="race">Race</label>
-        <input type="text" id="race" name="race" value={{kitten.race}} [(ngModel)]="kitten.race" #raceForm="ngModel" required />    
-    </fieldset>
+        <fieldset>
+            <label for="race">Race</label>
+            <input type="text" id="race" name="race" value={{kitten.race}} [(ngModel)]="kitten.race" #raceForm="ngModel" required />    
+        </fieldset>
 
-    <div *ngIf="raceForm.errors">
-        <span *ngIf="raceForm.invalid && raceForm.touched">La race est requise</span>
-    </div>
+        <div *ngIf="raceForm.errors">
+            <span *ngIf="raceForm.invalid && raceForm.touched">La race est requise</span>
+        </div>
 
-    <fieldset>
-        <label for="color">Couleur</label>
-        <input type="text" id="color" name="color" value={{kitten.color}} [(ngModel)]="kitten.color" #colorForm="ngModel" required />    
-    </fieldset>
+        <fieldset>
+            <label for="color">Couleur</label>
+            <input type="text" id="color" name="color" value={{kitten.color}} [(ngModel)]="kitten.color" #colorForm="ngModel" required />    
+        </fieldset>
 
-    <div *ngIf="colorForm.errors">
-        <span *ngIf="colorForm.invalid && colorForm.touched">La couleur est requise</span>
-    </div>
+        <div *ngIf="colorForm.errors">
+            <span *ngIf="colorForm.invalid && colorForm.touched">La couleur est requise</span>
+        </div>
 
-    <fieldset>
-        <label for="genre">Genre</label>
-        <select id="genre" name="genre" [value]="kitten.genre" [(ngModel)]="kitten.genre">
-            <option [defaultSelected]="">---</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>    
-    </fieldset>
+        <fieldset>
+            <label for="genre">Genre</label>
+            <select id="genre" name="genre" [value]="kitten.genre" [(ngModel)]="kitten.genre">
+                <option [defaultSelected]="">---</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>    
+        </fieldset>
 
-    <fieldset>
-        <label for="image">Image</label>
-        <div class="image-box">
-            <div class="image-list" *ngIf="kitten.imageUrls.length > 0">
-                <ul *ngFor="let image of kitten.imageUrls; index as i">
-                    <li>
-                        {{image}}
-                        <button type="button" (click)="delete(i)">X</button>
-                    </li>
-                </ul>
-            </div>
-            <div class="image-input-btn-box">
-                <input class="image-input" type="text" id="image" name="image" placeholder="Ajoutez une url d'image" [(ngModel)]="imageUrlToAdd" #imageForm="ngModel" />
-                <button type="button" (click)="add()" class="image-btn">Ajouter</button>   
-            </div>    
-        </div>  
-    </fieldset>
+        <fieldset>
+            <label for="image">Image</label>
+            <div class="image-box">
+                <div class="image-list" *ngIf="kitten.imageUrls.length > 0">
+                    <ul *ngFor="let image of kitten.imageUrls; index as i">
+                        <li>
+                            {{image}}
+                            <button type="button" (click)="delete(i)">X</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="image-input-btn-box">
+                    <input class="image-input" type="text" id="image" name="image" placeholder="Ajoutez une url d'image" [(ngModel)]="imageUrlToAdd" #imageForm="ngModel" />
+                    <button type="button" (click)="add()" class="image-btn">Ajouter</button>   
+                </div>    
+            </div>  
+        </fieldset>
 
-    <div *ngIf="imageForm.errors">
-        <span *ngIf="imageForm.invalid && imageForm.touched">La race est requise</span>
-    </div>
-    <div class="btn-pattes-box">
-        <button type="submit">Valider</button>
-        <img class="pattes" src="\assets\images\patteschat.png" alt="pattes" />
-    </div>
-    
-</form>
+        <div *ngIf="imageForm.errors">
+            <span *ngIf="imageForm.invalid && imageForm.touched">La race est requise</span>
+        </div>
+        <div class="btn-pattes-box">
+            <button type="submit">Valider</button>
+            <img class="pattes" src="\assets\images\patteschat.png" alt="pattes" />
+        </div>
+        
+    </form>
+</div>

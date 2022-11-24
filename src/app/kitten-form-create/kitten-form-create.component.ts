@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { KittenService } from '../kitten.service';
 import { Kitten } from '../models/kittens';
 
@@ -10,10 +11,21 @@ import { Kitten } from '../models/kittens';
 export class KittenFormCreateComponent implements OnInit {
 
   imageUrlToAdd: string = '';
-  kitten: Kittens = new Kittens('', 0, '', '','', [], false);
+  // kitten: Kittens = new Kittens('', 0, '', '','', [], false);
+
+  kitten: Kitten = {
+    id: 0,
+    name: '',
+    age: 0,
+    color: '',
+    race: '',
+    genre: '',
+    imageUrls: [],
+    isAdopted: false
+  }
 
 constructor(
-    private kittenService: KittenService 
+    private kittenService: KittenService, private router: Router
 ) { }
 
   ngOnInit(): void {
@@ -29,8 +41,7 @@ constructor(
   }
 
   createCat() {
-    console.log(this.kitten);
-    this.kittenService.createCat(this.kitten).subscribe(kitten => console.log(kitten));
+    this.kittenService.createCat(this.kitten).subscribe(kitten => this.router.navigate(['']));
   }
 
 }

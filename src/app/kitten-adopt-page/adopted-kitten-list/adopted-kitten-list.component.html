@@ -1,8 +1,8 @@
-<h2>Chats à adopter</h2>
-<p>Retrouvez ici la liste de nos gentil minous à adopter</p>
+<h2>Chats adoptés</h2>
+<p>Retrouvez ici la liste de nos gentil minous qui ont été adoptés</p>
 <div class="unadoped-kitten">
     <app-unadoped-kitten-item (refresh)="refreshKittenList()"
-    *ngFor="let kitten of unadoptedKittens"
+    *ngFor="let kitten of adoptedKittens"
     [kitten]="kitten"
     ></app-unadoped-kitten-item>
 </div>

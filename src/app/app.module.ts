@@ -11,6 +11,9 @@ import { KittenDetailsPageComponent } from './kitten-details-page/kitten-details
 import { KittenFormEditPageComponent } from './kitten-form-edit-page/kitten-form-edit-page.component';
 import { FormsModule } from '@angular/forms';
 import { KittenFormCreateComponent } from './kitten-form-create/kitten-form-create.component';
+import { HeaderComponent } from './header/header.component';
+import { KittenAdoptPageComponent } from './kitten-adopt-page/kitten-adopt-page.component';
+import { AdoptedKittenListComponent } from './kitten-adopt-page/adopted-kitten-list/adopted-kitten-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { KittenFormCreateComponent } from './kitten-form-create/kitten-form-crea
     UnadopedKittenItemComponent,
     KittenDetailsPageComponent,
     KittenFormEditPageComponent,
-    KittenFormCreateComponent
+    KittenFormCreateComponent,
+    HeaderComponent,
+    KittenAdoptPageComponent,
+    AdoptedKittenListComponent
   ],
   imports: [
     BrowserModule,

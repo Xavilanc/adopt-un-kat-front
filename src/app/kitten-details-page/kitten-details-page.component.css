@@ -1,7 +1,19 @@
+.kitten-detail-main {
+    background-color: #909090;
+}
+
+.kitten-detail-box {
+    margin: 5%;
+    padding: 5%;
+    background-color: #e44242;
+    border-radius: 15px;
+}
+
 h2 {
     text-align: center;
     font-size: 4vw;
     font-weight: bold;
+    color: #004f2d;
 }
 
 .kitten-image-box {
@@ -14,4 +26,30 @@ h2 {
 .kitten-image-box div img {
     border-radius: 15px;
     box-shadow: 3px 3px 5px rgb(114, 114, 114);
+}
+
+/* box centenant nom + age ou race + couleur */
+.kitten-name-age-box,
+.kitten-race-color-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Label pour le nom, age, race, couleur */
+.kitten-name-age-box p,
+.kitten-race-color-box p {
+    padding-left: 2%;
+    padding-right: 2%;
+    font-weight: bold;
+    font-size: 2vw;
+    color: #450920;
+}
+
+/* valeurs nom, age, couleur, race, genre */
+.kitten-name-age-box p span,
+.kitten-race-color-box p span,
+.kitten-genre span {
+    font-weight: lighter;
+    color: #ffda22;
 }

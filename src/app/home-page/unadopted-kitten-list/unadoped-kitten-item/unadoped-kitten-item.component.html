@@ -1,17 +1,14 @@
 <div class="unadoped-kitten-item">
     <img class="kitten-first-image" src={{kitten.imageUrls[0]}} alt={{kitten.name}} />
-    <button type="button" (click)="showDetails()">Détails</button>
+    <button type="button" class="btn-details" (click)="showDetails()">Détails</button>
     <div class="kitten-name-age-box">
         <p>Nom: <span>{{kitten.name}}</span></p>
+    </div>
+    <div class="kitten-name-age-box">
         <p>Age: <span>{{kitten.age}}</span></p>
     </div>
-    <div class="kitten-race-color-box">
-        <p>Race: <span>{{kitten.race}}</span></p>
-        <p>Couleur: <span>{{kitten.color}}</span></p>
-    </div>
-    <p class="kitten-genre">Genre : <span>{{kitten.genre}}</span></p>
     <div class="button-box">
-        <button type="button" class="btn-adopt" (click)="adoptKitten(kitten.id)">Adopter</button>
+        <button *ngIf="!kitten.isAdopted" type="button" class="btn-adopt" (click)="adoptKitten(kitten.id)">Adopter</button>
         <button type="button" class="btn-modify" (click)="editKitten()">Modifier</button>
         <button type="button" class="btn-delete" (click)="deleteKitten(kitten.id)">Supprimer</button>
     </div>

@@ -3,7 +3,8 @@
     padding: 2%;
     width: 25vw;
     margin: 1%;
-    background-color: rgb(220, 83, 83);
+    margin-bottom: 5%;
+    background-color: #e44242;
     border-radius: 15px;
 }
 
@@ -29,8 +30,8 @@
     padding-left: 2%;
     padding-right: 2%;
     font-weight: bold;
-    font-size: 1.5vw;
-    color: rgb(0, 0, 0);
+    font-size: 2vw;
+    color: #450920;
 }
 
 /* valeurs nom, age, couleur, race, genre */
@@ -38,7 +39,7 @@
 .kitten-race-color-box p span,
 .kitten-genre span {
     font-weight: lighter;
-    color: rgb(255, 255, 255);
+    color: #ffda22;
 }
 
 /* label genre */
@@ -55,10 +56,12 @@
     justify-content: space-evenly;
 }
 
-.button-box button {
+.button-box button,
+.btn-details {
     width: 25%;
     border: none;
     height: 5vh;
+    font-size: 1vw;
     border-radius: 15px;
     color:rgb(255, 255, 255);
     font-weight: bold;
@@ -75,5 +78,12 @@
 
 .btn-delete {
     background-color: rgb(184, 35, 35);
+}
+
+.btn-details {
+    background-color: #ffda22;
+    color: black;
+    margin-left: 35%;
+    height: 3vh;
 }
 

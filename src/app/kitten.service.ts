@@ -18,6 +18,10 @@ export class KittenService {
     return this.http.get<Kitten[]>(this.API_URL + '?isAdopted=false');
   }
 
+  findAllAdoptedCats(): Observable<Kitten[]> {
+    return this.http.get<Kitten[]>(this.API_URL + '?isAdopted=true');
+  }
+
   findCatsById(id: number): Observable<Kitten> {
     return this.http.get<Kitten>(this.API_URL + '/' + id);
   }
@@ -26,7 +30,7 @@ export class KittenService {
     return this.http.put<Kitten>(this.API_URL + '/' + id, kitten);
   }
 
-  createCat(kitten: Kittens): Observable<Kitten> {
+  createCat(kitten: Kitten): Observable<Kitten> {
     return this.http.post<Kitten>(this.API_URL, kitten);
   }
 

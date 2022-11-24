@@ -1,0 +1,33 @@
+.header-main-box {
+    display: flex;
+    justify-content: space-between;
+    background-color: #450920;
+    height: 25vh;
+}
+
+.header-links {
+    width: 70%;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+img {
+    width: 30%;
+}
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #e44242;
+    cursor: pointer;
+}
