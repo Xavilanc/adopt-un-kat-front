@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { KittenService } from 'src/app/kitten.service';
 import { Kitten } from 'src/app/models/kittens';
@@ -14,6 +14,9 @@ export class UnadopedKittenItemComponent implements OnInit {
 
   @Input()
   kitten!: Kitten;
+
+  @Output()
+  refresh: EventEmitter<void> = new EventEmitter();
 
   constructor(
     private router: Router, 
@@ -34,19 +37,11 @@ export class UnadopedKittenItemComponent implements OnInit {
   }
 
   deleteKitten(id: number) {
-    this.kittenService.deleteCat(this.kitten.id).subscribe(data => this.kitten = data);
-    this.router.navigate([''])
-  .then(() => {
-    window.location.reload();
-  });
+    this.kittenService.adoptCat(this.kitten.id).subscribe(() => this.refresh.emit());
   }
 
   adoptKitten(id: number) {
-    this.kittenService.adoptCat(this.kitten.id).subscribe(data => this.kitten = data);
-    this.router.navigate([''])
-  .then(() => {
-    window.location.reload();
-  });
+    this.kittenService.adoptCat(this.kitten.id).subscribe(() => this.refresh.emit());
   }
 
 }

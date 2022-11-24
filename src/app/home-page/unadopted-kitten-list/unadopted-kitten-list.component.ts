@@ -14,6 +14,10 @@ export class UnadoptedKittenListComponent implements OnInit {
   constructor(private kittenService: KittenService) { }
 
   ngOnInit(): void {
+    this.refreshKittenList();
+  }
+
+  refreshKittenList(): void {
     this.kittenService.findAllUnadoptedCats().subscribe(kittens => this.unadoptedKittens = kittens);
   }
 
