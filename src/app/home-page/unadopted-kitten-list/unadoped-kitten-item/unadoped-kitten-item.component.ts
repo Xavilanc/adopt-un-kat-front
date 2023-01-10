@@ -37,7 +37,7 @@ export class UnadopedKittenItemComponent implements OnInit {
   }
 
   deleteKitten(id: number) {
-    this.kittenService.adoptCat(this.kitten.id).subscribe(() => this.refresh.emit());
+    this.kittenService.deleteCat(this.kitten.id).subscribe(() => this.refresh.emit());
   }
 
   adoptKitten(id: number) {
